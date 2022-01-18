@@ -24,9 +24,6 @@ jobs:
     - name: Display the current working directory
       run: |
         pwd
-    - name: compile tests
-      run: |
-        mvn test-compile -pl . -am
     - name: run tests without nondex
       run: |
         mvn -pl . test -Dtest=org.springframework.data.elasticsearch.core.index.MappingBuilderUnitTests#shouldAddFieldsThatAreExcludedFromSource;

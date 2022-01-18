@@ -30,7 +30,7 @@ jobs:
         mvn test-compile -pl . -am
     - name: run tests without nondex
       run: |
-        mvn -pl . test -Dtest=org.springframework.data.elasticsearch.core.index.MappingBuilderUnitTests#shouldAddFieldsThatAreExcludedFromSource > /dev/null;
+        mvn -pl . test -Dtest=org.springframework.data.elasticsearch.core.index.MappingBuilderUnitTests#shouldAddFieldsThatAreExcludedFromSource;
     - name: run tests with nondex
       run: |
         mvn -pl . edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=org.springframework.data.elasticsearch.core.index.MappingBuilderUnitTests#shouldAddFieldsThatAreExcludedFromSource > /dev/null 2>&1 ;

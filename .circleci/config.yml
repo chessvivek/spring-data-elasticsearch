@@ -19,16 +19,16 @@ jobs:
       # Checkout the code as the first step.
       - checkout
       # Use mvn clean and package as the standard maven build phase
-      - run:
-          name: Build
-          command: mvn -B -DskipTests clean package
+#       - run:
+#           name: Build
+#           command: mvn -B -DskipTests clean package
       # Then run your tests!
       - run:
           name: Test without nondex
-          command: mvn -pl . test -Dtest=org.springframework.data.elasticsearch.core.index.MappingBuilderUnitTests#shouldAddFieldsThatAreExcludedFromSource;
+          command: mvn -pl . test  -noverify -Dtest=org.springframework.data.elasticsearch.core.index.MappingBuilderUnitTests#shouldAddFieldsThatAreExcludedFromSource;
       - run:
           name: Test with nondex
-          command: mvn -pl . edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=org.springframework.data.elasticsearch.core.index.MappingBuilderUnitTests#shouldAddFieldsThatAreExcludedFromSource;
+          command: mvn -pl . edu.illinois:nondex-maven-plugin:1.1.2:nondex -noverify -Dtest=org.springframework.data.elasticsearch.core.index.MappingBuilderUnitTests#shouldAddFieldsThatAreExcludedFromSource;
           
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows

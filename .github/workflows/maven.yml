@@ -21,9 +21,9 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-    - name: Display the current working directory
+    - name: Display the java version
       run: |
-        pwd
+        java -version
     - name: run tests without nondex
       run: |
         mvn -pl . test -Dtest=org.springframework.data.elasticsearch.core.index.MappingBuilderUnitTests#shouldAddFieldsThatAreExcludedFromSource;

@@ -28,7 +28,7 @@ jobs:
           command: mvn -pl . test -Dtest="org.springframework.data.elasticsearch.core.index.MappingBuilderUnitTests#shouldAddFieldsThatAreExcludedFromSource;
       - run:
           name: Test with nondex
-          command: mvn -pl . test -Dtest=org.springframework.data.elasticsearch.core.index.MappingBuilderUnitTests#shouldAddFieldsThatAreExcludedFromSource;
+          command: mvn -pl . edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=org.springframework.data.elasticsearch.core.index.MappingBuilderUnitTests#shouldAddFieldsThatAreExcludedFromSource;
           
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows

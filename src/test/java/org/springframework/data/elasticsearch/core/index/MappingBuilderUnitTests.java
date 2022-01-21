@@ -985,7 +985,9 @@ public class MappingBuilderUnitTests extends MappingContextBaseTests {
 
 		String mapping = getMappingBuilder().buildPropertyMapping(ExcludedFieldEntity.class);
 
-		assertEquals(expected, mapping, true);
+		// ignore the ordering of JSON fields
+		// by passing false as the third argument
+		assertEquals(expected, mapping, false);
 	}
 
 	// region entities
